@@ -336,6 +336,7 @@ public class BSImagePicker extends BottomSheetDialogFragment implements LoaderMa
 
     @Override
     public Loader<Cursor> onCreateLoader(int id, Bundle args) {
+        try{
         if (id == LOADER_ID && getContext() != null) {
             Uri uri = MediaStore.Images.Media.EXTERNAL_CONTENT_URI;
             String[] projection = new String[]{MediaStore.Images.Media._ID};
@@ -344,6 +345,11 @@ public class BSImagePicker extends BottomSheetDialogFragment implements LoaderMa
         } else {
             return null;
         }
+        }catch(Exception e)
+            {
+                Log.i("Imageeeeeee","exeception eeee"+e
+);                
+    }
     }
 
     @Override
